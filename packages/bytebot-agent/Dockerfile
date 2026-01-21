@@ -5,8 +5,8 @@ FROM node:20-alpine
 WORKDIR /app
 
 # Copy app source
-COPY ./shared ./shared
-COPY ./bytebot-agent/ ./bytebot-agent/
+COPY ./packages/shared ./shared
+COPY ./packages/bytebot-agent/ ./bytebot-agent/
 
 WORKDIR /app/bytebot-agent
 
