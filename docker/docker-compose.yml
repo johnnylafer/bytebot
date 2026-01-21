@@ -57,6 +57,7 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.http.middlewares.bytebot-auth.basicauth.users=admin:$$2y$$05$$2YzQH5todciGEhqRJpUbuuhJAhLVIQuCh9niMVJ6XIlYjyh7EBd5a"
+      - "traefik.http.routers.https-0-g44wwwoo0cgsoskw8gcs8skc-bytebot-ui.middlewares=gzip,bytebot-auth"
     environment:
       - NODE_ENV=production
       - BYTEBOT_AGENT_BASE_URL=${BYTEBOT_AGENT_BASE_URL:-http://bytebot-agent:9991}
